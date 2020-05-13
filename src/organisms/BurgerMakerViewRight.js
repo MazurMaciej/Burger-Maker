@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import backgroundBottom from '../assets/img/wooden-bgc.jpg'
+import Burger from '../molecules/Burger';
 
 const MainWrapper = styled.div`
   background-color: black;
@@ -24,7 +25,7 @@ const BackgroundBottom = styled.div`
 
 const BackgroundTop = styled.div`
     background-image: radial-gradient(#5C5C5C , #000000);
-    top: 0;
+    bottom: 0;
     height: 100vh;
     position: absolute;
     right: 0;
@@ -32,10 +33,12 @@ const BackgroundTop = styled.div`
 `;
 
 
-const BurgerMakerViewRight = () => {
+const BurgerMakerViewRight = ({ ingredients }) => {
+
   return (
     <MainWrapper>
       <BackgroundTop />
+      <Burger ingredients={ingredients} />
       <BackgroundBottom />
     </MainWrapper>
   )
