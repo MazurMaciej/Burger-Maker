@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SubpageTitle from '../atoms/SubpageTitle';
 
-import TitleForIngredientsCategory from '../atoms/TitleForIngredientsCategory';
+import TitleForIngredientsCategory from '../atoms/panelAtoms/NameIngredientsCategory';
 import IngredientPanel from '../molecules/IngredientPanel';
 //meet
 import beef from '../assets/img/beef.svg';
@@ -49,19 +49,107 @@ const LastCategoryWrapper = styled.div`
 `;
 
 
-const BurgerMakerViewLeft = ({ ingredients }) => {
+const BurgerMakerViewLeft = (props) => {
 
-  const ingredientsArray = [{ 'Beef': [beef, ingredients.beef] }, { 'Chicken': [chicken, ingredients.chicken] }, { 'Pork': [pork, ingredients.pork] }, { 'Fish': [fish, ingredients.fish] }, { 'Egg': [egg, ingredients.egg] }, { 'Cucumber': [cucumber, ingredients.cucumber] }, { 'Lettuce': [lettuce, ingredients.lettuce] }, { 'Onion': [onion, ingredients.onion] }, { 'Pickle': [pickle, ingredients.pickle] }, { 'Tomato': [tomato, ingredients.tomato] }, { 'Chedder': [chedder, ingredients.chedder] }, { 'Cheese': [cheese, ingredients.cheese] }, { 'Ketchup': [ketchup, ingredients.ketchup] }, { 'Mustard': [mustard, ingredients.mustard] }]
+  const ingredientsA = [
+    {
+      label: 'Beef',
+      type: 'beef',
+      photo: beef,
+      number: props.ingredients.beef
+    },
+    {
+      label: 'Chicken',
+      type: 'chicken',
+      photo: chicken,
+      number: props.ingredients.chicken
+    },
+    {
+      label: 'Pork',
+      type: 'pork',
+      photo: pork,
+      number: props.ingredients.pork
+    },
+    {
+      label: 'Fish',
+      type: 'fish',
+      photo: fish,
+      number: props.ingredients.fish
+    },
+    {
+      label: 'Egg',
+      type: 'egg',
+      photo: egg,
+      number: props.ingredients.egg
+    },
+    {
+      label: 'Tomato',
+      type: 'tomato',
+      photo: tomato,
+      number: props.ingredients.tomato
+    },
+    {
+      label: 'Cucumber',
+      type: 'cucumber',
+      photo: cucumber,
+      number: props.ingredients.cucumber
+    },
+    {
+      label: 'Lettuce',
+      type: 'lettuce',
+      photo: lettuce,
+      number: props.ingredients.lettuce
+    },
+    {
+      label: 'Onion',
+      type: 'onion',
+      photo: onion,
+      number: props.ingredients.onion
+    },
+    {
+      label: 'Pickle',
+      type: 'pickle',
+      photo: pickle,
+      number: props.ingredients.pickle
+    },
+    {
+      label: 'Chedder',
+      type: 'chedder',
+      photo: chedder,
+      number: props.ingredients.chedder
+    },
+    {
+      label: 'Cheese',
+      type: 'cheese',
+      photo: cheese,
+      number: props.ingredients.cheese
+    },
+    {
+      label: 'Ketchup',
+      type: 'ketchup',
+      photo: ketchup,
+      number: props.ingredients.ketchup
+    },
+    {
+      label: 'Mustard',
+      type: 'mustard',
+      photo: mustard,
+      number: props.ingredients.mustard
+    },
+  ];
 
-  const mapIngredients = (a, b) => {
-    return (
-      ingredientsArray.slice(a, b).map(item => {
-        const name = Object.keys(item);
-        const photo = Object.values(item);
-        return <IngredientPanel key={name} name={name} photo={photo[0][0]} info={photo[0][1]} />
-      })
-    )
-  };
+  const buildControls = (firstIngredient, lastIngredient) => (
+    ingredientsA.slice(firstIngredient, lastIngredient).map(item => (
+      <IngredientPanel
+        key={item.label}
+        label={item.label}
+        photo={item.photo}
+        added={() => props.ingredientsAdded(item.type)}
+        remove={() => props.ingredientsRemove(item.type)}
+        number={item.number}
+      />
+    ))
+  );
 
   return (
     <Wrapper>
@@ -71,26 +159,26 @@ const BurgerMakerViewLeft = ({ ingredients }) => {
           <TitleForIngredientsCategory>
             Meet
       </TitleForIngredientsCategory>
-          {mapIngredients(0, 5)}
+          {buildControls(0, 5)}
         </CategoryWrapper>
         <CategoryWrapper>
           <TitleForIngredientsCategory>
             Vegetables
           </TitleForIngredientsCategory>
-          {mapIngredients(5, 10)}
+          {buildControls(5, 10)}
         </CategoryWrapper >
         <CategoryWrapper>
           <LastCategoryWrapper>
             <TitleForIngredientsCategory>
               Cheese
           </TitleForIngredientsCategory>
-            {mapIngredients(10, 12)}
+            {buildControls(10, 12)}
           </LastCategoryWrapper>
           <LastCategoryWrapper>
             <TitleForIngredientsCategory>
               Sauce
           </TitleForIngredientsCategory>
-            {mapIngredients(12, 14)}
+            {buildControls(12, 14)}
           </LastCategoryWrapper>
         </CategoryWrapper>
       </MainCategoryWrapper>

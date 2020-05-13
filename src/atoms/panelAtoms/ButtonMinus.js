@@ -13,9 +13,9 @@ const Btn = styled.button`
   width: 50%;
 `;
 
-const IngredientPanelBtnMinus = () => {
+const IngredientPanelBtnMinus = ({ remove }) => {
   return (
-    <Btn>-</Btn>
+    <Btn onClick={remove}>-</Btn>
   )
 }
 export default IngredientPanelBtnMinus;

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import IngredientName from '../atoms/IngredientPanelName';
-import IngredientPhoto from '../atoms/IngredientPanelPhoto';
-import IngredientPanelNumberArea from '../atoms/IngredientPanelNumberArea';
-import IngredientPanelBtnMinus from '../atoms/IngredientPanelBtnMinus'
-import IngredientPanelBtnPlus from '../atoms/IngredientPanelBtnPlus';
+import IngredientName from '../atoms/panelAtoms/PanelName';
+import IngredientPhoto from '../atoms/panelAtoms/Photo';
+import IngredientPanelNumberArea from '../atoms/panelAtoms/IngredientsNumber';
+import IngredientPanelBtnMinus from '../atoms/panelAtoms/ButtonMinus'
+import IngredientPanelBtnPlus from '../atoms/panelAtoms/ButtonPlus';
 
 const Wrapper = styled.div`
   margin: 12px 0;
@@ -22,17 +22,17 @@ const ContentDivColumn = styled.div`
   width: 50%;
 `;
 
-const IngredientPanel = ({ name, photo, info }) => {
+const IngredientPanel = ({ photo, info, label, key, added, remove, number }) => {
   return (
     <Wrapper>
-      <IngredientName>{name}</IngredientName>
+      <IngredientName>{label}</IngredientName>
       <ContentDivRow>
         <IngredientPhoto ingredientName={photo} />
         <ContentDivColumn>
-          <IngredientPanelNumberArea info={info} />
+          <IngredientPanelNumberArea number={number} />
           <ContentDivRow>
-            <IngredientPanelBtnMinus />
-            <IngredientPanelBtnPlus />
+            <IngredientPanelBtnMinus remove={remove} />
+            <IngredientPanelBtnPlus added={added} />
           </ContentDivRow>
         </ContentDivColumn>
       </ContentDivRow>

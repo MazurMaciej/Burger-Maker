@@ -13,9 +13,9 @@ const Area = styled.p`
   margin: 0 0 2px 0;
 `;
 
-const IngredientPanelNumberArea = ({ info }) => {
+const IngredientPanelNumberArea = ({ number }) => {
   return (
-    <Area>{info}</Area>
+    <Area>{number}</Area>
   )
 }
 export default IngredientPanelNumberArea;

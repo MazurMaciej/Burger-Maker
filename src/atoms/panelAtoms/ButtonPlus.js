@@ -13,9 +13,9 @@ const Btn = styled.button`
   width: 50%;
 `;
 
-const IngredientPanelBtnPlus = () => {
+const IngredientPanelBtnPlus = ({ added }) => {
   return (
-    <Btn>+</Btn>
+    <Btn onClick={added}>+</Btn>
   )
 }
 export default IngredientPanelBtnPlus;

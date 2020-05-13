@@ -11,18 +11,29 @@ const BurgerContainer = styled.div`
   z-index: 1;
 `;
 
+const Title = styled.p`
+  font-size: 60px;
+  margin: 100px;
+`;
+
 const burger = (props) => {
   let index = 90;
+
   const handleZIndex = () => {
-    --index
-    return index;
+    return index = index - 1;
   }
 
-  const transformStateToBurger = Object.keys(props.ingredients).map(item => {
+  let transformStateToBurger = Object.keys(props.ingredients).map(item => {
     return [...Array(props.ingredients[item])].map((_, position) => {
       return <BurgerIngredient key={item + position} ingredientType={item} style={{ zIndex: `${handleZIndex(index)}` }} />
     })
-  });
+  }).reduce((arr, el) => {
+    return arr.concat(el)
+  }, []);
+
+  if (transformStateToBurger.length === 0) {
+    transformStateToBurger = <Title>Please add some ingredients</Title>
+  }
 
   return (
     <BurgerContainer>
