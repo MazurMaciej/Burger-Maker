@@ -1,151 +1,97 @@
 import React from 'react';
 import styled from 'styled-components';
 import SubpageTitle from '../atoms/SubpageTitle';
-
-import TitleForIngredientsCategory from '../atoms/panelAtoms/NameIngredientsCategory';
+import NameIngredientsCategory from '../atoms/NameIngredientsCategory';
 import IngredientPanel from '../molecules/IngredientPanel';
-//meet
-import beef from '../assets/img/beef.svg';
-import chicken from '../assets/img/chicken.svg';
-import pork from '../assets/img/pork.svg';
-import fish from '../assets/img/fish.svg';
-import egg from '../assets/img/egg.svg';
-//cheese
-import chedder from '../assets/img/chedder.svg';
-import cheese from '../assets/img/cheese.svg';
-//vegetables 
-import cucumber from '../assets/img/cucumber.svg';
-import lettuce from '../assets/img/lettuce.svg';
-import onion from '../assets/img/onion.svg';
-import pickle from '../assets/img/pickle.svg';
-import tomato from '../assets/img/tomato.svg';
-//sauce
-import ketchup from '../assets/img/ketchup.svg';
-import mustard from '../assets/img/mustard.svg';
+import PanelName from '../atoms/PanelName';
+import ButtonOrder from '../atoms/ButtonOrder';
+import { IngredientsList } from '../assets/data/arrayWithIngredients';
 
+const BurgerMakerViewLeft = ({ ingredients, ingredientsAdded, ingredientsRemove, currentPrice }) => {
 
-const Wrapper = styled.div`
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 50%;
-  padding-left: 80px;
-  padding-right: 80px;
-`;
-
-const MainCategoryWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const CategoryWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25%;
-`;
-const LastCategoryWrapper = styled.div`
-`;
-
-
-const BurgerMakerViewLeft = (props) => {
-
-  const ingredientsA = [
+  const ingredientsControlList = [
     {
       label: 'Beef',
       type: 'beef',
-      photo: beef,
-      number: props.ingredients.beef
+      photo: IngredientsList[0],
+      number: ingredients.beef
     },
     {
       label: 'Chicken',
       type: 'chicken',
-      photo: chicken,
-      number: props.ingredients.chicken
+      photo: IngredientsList[1],
+      number: ingredients.chicken
     },
     {
       label: 'Pork',
       type: 'pork',
-      photo: pork,
-      number: props.ingredients.pork
+      photo: IngredientsList[2],
+      number: ingredients.pork
     },
     {
       label: 'Fish',
       type: 'fish',
-      photo: fish,
-      number: props.ingredients.fish
-    },
-    {
-      label: 'Egg',
-      type: 'egg',
-      photo: egg,
-      number: props.ingredients.egg
+      photo: IngredientsList[3],
+      number: ingredients.fish
     },
     {
       label: 'Tomato',
       type: 'tomato',
-      photo: tomato,
-      number: props.ingredients.tomato
+      photo: IngredientsList[4],
+      number: ingredients.tomato
     },
     {
       label: 'Cucumber',
       type: 'cucumber',
-      photo: cucumber,
-      number: props.ingredients.cucumber
+      photo: IngredientsList[5],
+      number: ingredients.cucumber
     },
     {
       label: 'Lettuce',
       type: 'lettuce',
-      photo: lettuce,
-      number: props.ingredients.lettuce
+      photo: IngredientsList[6],
+      number: ingredients.lettuce
     },
     {
       label: 'Onion',
       type: 'onion',
-      photo: onion,
-      number: props.ingredients.onion
-    },
-    {
-      label: 'Pickle',
-      type: 'pickle',
-      photo: pickle,
-      number: props.ingredients.pickle
+      photo: IngredientsList[7],
+      number: ingredients.onion
     },
     {
       label: 'Chedder',
       type: 'chedder',
-      photo: chedder,
-      number: props.ingredients.chedder
+      photo: IngredientsList[8],
+      number: ingredients.chedder
     },
     {
       label: 'Cheese',
       type: 'cheese',
-      photo: cheese,
-      number: props.ingredients.cheese
+      photo: IngredientsList[9],
+      number: ingredients.cheese
     },
     {
       label: 'Ketchup',
       type: 'ketchup',
-      photo: ketchup,
-      number: props.ingredients.ketchup
+      photo: IngredientsList[10],
+      number: ingredients.ketchup
     },
     {
       label: 'Mustard',
       type: 'mustard',
-      photo: mustard,
-      number: props.ingredients.mustard
+      photo: IngredientsList[11],
+      number: ingredients.mustard
     },
   ];
 
   const buildControls = (firstIngredient, lastIngredient) => (
-    ingredientsA.slice(firstIngredient, lastIngredient).map(item => (
+    ingredientsControlList.slice(firstIngredient, lastIngredient).map(item => (
       <IngredientPanel
         key={item.label}
         label={item.label}
         photo={item.photo}
-        added={() => props.ingredientsAdded(item.type)}
-        remove={() => props.ingredientsRemove(item.type)}
+        added={() => ingredientsAdded(item.type)}
+        remove={() => ingredientsRemove(item.type)}
         number={item.number}
       />
     ))
@@ -156,34 +102,70 @@ const BurgerMakerViewLeft = (props) => {
       <SubpageTitle>Add ingredients</SubpageTitle>
       <MainCategoryWrapper>
         <CategoryWrapper>
-          <TitleForIngredientsCategory>
+          <NameIngredientsCategory>
             Meet
-      </TitleForIngredientsCategory>
-          {buildControls(0, 5)}
+          </NameIngredientsCategory>
+          {buildControls(0, 4)}
         </CategoryWrapper>
         <CategoryWrapper>
-          <TitleForIngredientsCategory>
+          <NameIngredientsCategory>
             Vegetables
-          </TitleForIngredientsCategory>
-          {buildControls(5, 10)}
+          </NameIngredientsCategory>
+          {buildControls(4, 8)}
         </CategoryWrapper >
         <CategoryWrapper>
           <LastCategoryWrapper>
-            <TitleForIngredientsCategory>
+            <NameIngredientsCategory>
               Cheese
-          </TitleForIngredientsCategory>
-            {buildControls(10, 12)}
+          </NameIngredientsCategory>
+            {buildControls(8, 10)}
           </LastCategoryWrapper>
           <LastCategoryWrapper>
-            <TitleForIngredientsCategory>
+            <NameIngredientsCategory>
               Sauce
-          </TitleForIngredientsCategory>
-            {buildControls(12, 14)}
+          </NameIngredientsCategory>
+            {buildControls(10, 12)}
           </LastCategoryWrapper>
         </CategoryWrapper>
       </MainCategoryWrapper>
+      <SummaryWrapper>
+        <PanelName currentPrice={currentPrice}>Current burger price: </PanelName>
+        <ButtonOrder>Order now</ButtonOrder>
+      </SummaryWrapper>
     </Wrapper >
   )
 };
 
 export default BurgerMakerViewLeft;
+
+const CategoryWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  width: 30%;
+`;
+
+const LastCategoryWrapper = styled.div`
+`;
+
+const MainCategoryWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const SummaryWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Wrapper = styled.div`
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 50%;
+  padding-left: 80px;
+  padding-right: 80px;
+`;

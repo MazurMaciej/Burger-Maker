@@ -1,38 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import IngredientName from '../atoms/panelAtoms/PanelName';
-import IngredientPhoto from '../atoms/panelAtoms/Photo';
-import IngredientPanelNumberArea from '../atoms/panelAtoms/IngredientsNumber';
-import IngredientPanelBtnMinus from '../atoms/panelAtoms/ButtonMinus'
-import IngredientPanelBtnPlus from '../atoms/panelAtoms/ButtonPlus';
+import PanelName from '../atoms/PanelName';
+import IgredientPhoto from '../atoms/IgredientPhoto';
+import IngredientNumber from '../atoms/IngredientNumber';
+import ButtonMinus from '../atoms/ButtonMinus'
+import ButtonPlus from '../atoms/ButtonPlus';
 
-const Wrapper = styled.div`
-  margin: 12px 0;
-  width: 80%; 
-`;
-
-const ContentDivRow = styled.div`
-  display: flex;
-`;
-
-const ContentDivColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-left: 20px;
-  width: 50%;
-`;
-
-const IngredientPanel = ({ photo, info, label, key, added, remove, number }) => {
+const IngredientPanel = ({ photo, label, added, remove, number }) => {
   return (
     <Wrapper>
-      <IngredientName>{label}</IngredientName>
+      <PanelName>{label}</PanelName>
       <ContentDivRow>
-        <IngredientPhoto ingredientName={photo} />
+        <IgredientPhoto ingredientName={photo} />
         <ContentDivColumn>
-          <IngredientPanelNumberArea number={number} />
+          <IngredientNumber number={number} />
           <ContentDivRow>
-            <IngredientPanelBtnMinus remove={remove} />
-            <IngredientPanelBtnPlus added={added} />
+            <ButtonMinus remove={remove} />
+            <ButtonPlus added={added} />
           </ContentDivRow>
         </ContentDivColumn>
       </ContentDivRow>
@@ -41,3 +25,20 @@ const IngredientPanel = ({ photo, info, label, key, added, remove, number }) => 
 };
 
 export default IngredientPanel;
+
+
+const ContentDivColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  width: 30%;
+`;
+
+const ContentDivRow = styled.div`
+  display: flex;
+`;
+
+const Wrapper = styled.div`
+  margin: 15px 0;
+  width: 80%; 
+`;

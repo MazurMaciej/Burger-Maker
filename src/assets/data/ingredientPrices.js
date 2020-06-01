@@ -1,0 +1,16 @@
+export const ingredientPrices = {
+  egg: 1,
+  cucumber: 2,
+  pickle: 2,
+  tomato: 2,
+  onion: 3,
+  lettuce: 2,
+  ketchup: 2,
+  mustard: 2,
+  chedder: 2,
+  cheese: 2,
+  beef: 2,
+  chicken: 2,
+  pork: 2,
+  fish: 2,
+}

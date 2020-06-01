@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const ButtonMinus = ({ remove }) => <Btn onClick={remove}> - </Btn>
+
+export default ButtonMinus;
+
 const Btn = styled.button`
   align-items: center;
   background-color: white;
@@ -12,10 +16,3 @@ const Btn = styled.button`
   opacity: .3;
   width: 50%;
 `;
-
-const IngredientPanelBtnMinus = ({ remove }) => {
-  return (
-    <Btn onClick={remove}>-</Btn>
-  )
-}
-export default IngredientPanelBtnMinus;

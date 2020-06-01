@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const ButtonPlus = ({ added }) => <Btn onClick={added}>+</Btn>
+
+export default ButtonPlus;
+
 const Btn = styled.button`
   align-items: center;
   background-color: white;
@@ -12,10 +16,3 @@ const Btn = styled.button`
   opacity: .3;
   width: 50%;
 `;
-
-const IngredientPanelBtnPlus = ({ added }) => {
-  return (
-    <Btn onClick={added}>+</Btn>
-  )
-}
-export default IngredientPanelBtnPlus;

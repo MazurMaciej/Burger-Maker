@@ -2,20 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import BurgerIngredient from '../atoms/BurgerIngredient';
 
-const BurgerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 75%;
-  width: 100%;
-  z-index: 1;
-`;
-
-const Title = styled.p`
-  font-size: 60px;
-  margin: 100px;
-`;
-
 const burger = (props) => {
   let index = 90;
 
@@ -32,7 +18,7 @@ const burger = (props) => {
   }, []);
 
   if (transformStateToBurger.length === 0) {
-    transformStateToBurger = <Title>Please add some ingredients</Title>
+    transformStateToBurger = <Title>Please add some ingredients to burger...</Title>
   }
 
   return (
@@ -41,7 +27,26 @@ const burger = (props) => {
       {transformStateToBurger}
       <BurgerIngredient ingredientType='breadBottom' style={{ zIndex: `-1` }} />
     </BurgerContainer>
-  )
-}
+  );
+};
 
 export default burger;
+
+const BurgerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 75%;
+  width: 100%;
+  z-index: 1;
+`;
+
+const Title = styled.p`
+  color: white;
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+`;

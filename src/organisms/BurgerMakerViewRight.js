@@ -3,14 +3,17 @@ import styled from 'styled-components';
 import backgroundBottom from '../assets/img/wooden-bgc.jpg'
 import Burger from '../molecules/Burger';
 
-const MainWrapper = styled.div`
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  position: relative;
-  width: 50%;
-`;
+const BurgerMakerViewRight = ({ ingredients }) => {
+  return (
+    <MainWrapper>
+      <BackgroundTop />
+      <Burger ingredients={ingredients} />
+      <BackgroundBottom />
+    </MainWrapper>
+  );
+};
+
+export default BurgerMakerViewRight;
 
 const BackgroundBottom = styled.div`
     background-image: url(${backgroundBottom});
@@ -32,16 +35,11 @@ const BackgroundTop = styled.div`
     width: 100%;
 `;
 
-
-const BurgerMakerViewRight = ({ ingredients }) => {
-
-  return (
-    <MainWrapper>
-      <BackgroundTop />
-      <Burger ingredients={ingredients} />
-      <BackgroundBottom />
-    </MainWrapper>
-  )
-};
-
-export default BurgerMakerViewRight;
+const MainWrapper = styled.div`
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  width: 50%;
+`;

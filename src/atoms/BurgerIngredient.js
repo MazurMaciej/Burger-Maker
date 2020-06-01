@@ -1,105 +1,65 @@
 import React from 'react';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
+import { IngredientsList } from '../assets/data/arrayWithIngredients';
 
-//bread
-import breadTop from '../assets/img/breadTop.svg';
-import breadBottom from '../assets/img/breadBottom.svg';
-
-//meet
-import beef from '../assets/img/beef.svg';
-import chicken from '../assets/img/chicken.svg';
-import pork from '../assets/img/pork.svg';
-import fish from '../assets/img/fish.svg';
-import egg from '../assets/img/egg.svg';
-
-//cheese
-import chedder from '../assets/img/chedder.svg';
-import cheese from '../assets/img/cheese.svg';
-
-//vegetables 
-import cucumber from '../assets/img/cucumber.svg';
-import lettuce from '../assets/img/lettuce.svg';
-import onion from '../assets/img/onion.svg';
-import pickle from '../assets/img/pickle.svg';
-import tomato from '../assets/img/tomato.svg';
-
-//sauce
-import ketchup from '../assets/img/ketchup.svg';
-import mustard from '../assets/img/mustard.svg';
-
-const IngredientImage = styled.img`
-  margin: 0 auto;
-  width: 35%;
-  margin-bottom: -95px;
-`;
-
-const burgerIngredient = ({ ingredientType, style }) => {
+const BurgerIngredient = ({ ingredientType, style }) => {
   let ingredient = null;
 
   switch (ingredientType) {
-    case ('breadTop'):
-      ingredient = <IngredientImage src={breadTop} alt="breadTop" style={style} />
-      break;
-
-    case ('breadBottom'):
-      ingredient = <IngredientImage src={breadBottom} alt="breadBottom" style={style} />
-      break;
-
     case ('beef'):
-      ingredient = <IngredientImage src={beef} alt="beef" style={style} />
+      ingredient = <IngredientImage src={IngredientsList[0]} alt="beef" style={style} />
       break;
 
     case ('chicken'):
-      ingredient = <IngredientImage src={chicken} style={style} alt="chicken" />
+      ingredient = <IngredientImage src={IngredientsList[1]} alt="chicken" style={style} />
       break;
 
     case ('pork'):
-      ingredient = <IngredientImage src={pork} alt="pork" style={style} />
+      ingredient = <IngredientImage src={IngredientsList[2]} alt="pork" style={style} />
       break;
 
     case ('fish'):
-      ingredient = <IngredientImage src={fish} alt="fish" style={style} />
-      break;
-
-    case ('egg'):
-      ingredient = <IngredientImage src={egg} alt="egg" style={style} />
-      break;
-
-    case ('chedder'):
-      ingredient = <IngredientImage src={chedder} alt="chedder" style={style} />
-      break;
-
-    case ('cheese'):
-      ingredient = <IngredientImage src={cheese} alt="cheese" style={style} />
-      break;
-
-    case ('cucumber'):
-      ingredient = <IngredientImage src={cucumber} alt="cucumber" style={style} />
-      break;
-
-    case ('lettuce'):
-      ingredient = <IngredientImage src={lettuce} alt="lettuce" style={style} />
-      break;
-
-    case ('onion'):
-      ingredient = <IngredientImage src={onion} alt="onion" style={style} />
-      break;
-
-    case ('pickle'):
-      ingredient = <IngredientImage src={pickle} alt="pickle" style={style} />
+      ingredient = <IngredientImage src={IngredientsList[3]} alt="fish" style={style} />
       break;
 
     case ('tomato'):
-      ingredient = <IngredientImage src={tomato} alt="tomato" style={style} />
+      ingredient = <IngredientImage src={IngredientsList[4]} alt="tomato" style={style} />
+      break;
+
+    case ('cucumber'):
+      ingredient = <IngredientImage src={IngredientsList[5]} alt="cucumber" style={style} />
+      break;
+
+    case ('lettuce'):
+      ingredient = <IngredientImage src={IngredientsList[6]} alt="lettuce" style={style} />
+      break;
+
+    case ('onion'):
+      ingredient = <IngredientImage src={IngredientsList[7]} alt="onion" style={style} />
+      break;
+
+    case ('chedder'):
+      ingredient = <IngredientImage src={IngredientsList[8]} alt="chedder" style={style} />
+      break;
+
+    case ('cheese'):
+      ingredient = <IngredientImage src={IngredientsList[9]} alt="cheese" style={style} />
       break;
 
     case ('ketchup'):
-      ingredient = <IngredientImage src={ketchup} alt="ketchup" style={style} />
+      ingredient = <IngredientImage src={IngredientsList[10]} alt="ketchup" style={style} />
       break;
 
     case ('mustard'):
-      ingredient = <IngredientImage src={mustard} alt="mustard" style={style} />
+      ingredient = <IngredientImage src={IngredientsList[11]} alt="mustard" style={style} />
+      break;
+
+    case ('breadTop'):
+      ingredient = <IngredientImage src={IngredientsList[12]} alt="breadTop" style={style} />
+      break;
+
+    case ('breadBottom'):
+      ingredient = <IngredientImage src={IngredientsList[13]} alt="breadBottom" style={style} />
       break;
 
     default:
@@ -108,8 +68,10 @@ const burgerIngredient = ({ ingredientType, style }) => {
   return ingredient;
 }
 
-// burgerIngredient.propTypes = {
-//   type: PropTypes.string.isRequired
-// };
+export default BurgerIngredient;
 
-export default burgerIngredient;
+const IngredientImage = styled.img`
+  margin: 0 auto;
+  width: 35%;
+  margin-bottom: -90px;
+`;
