@@ -7,7 +7,7 @@ import PanelName from '../atoms/PanelName';
 import ButtonOrder from '../atoms/ButtonOrder';
 import { IngredientsList } from '../assets/data/arrayWithIngredients';
 
-const BurgerMakerViewLeft = ({ ingredients, ingredientsAdded, ingredientsRemove, currentPrice }) => {
+const BurgerMakerViewLeft = ({ ingredients, ingredientsAdded, ingredientsRemove, currentPrice, togglePopup }) => {
 
   const ingredientsControlList = [
     {
@@ -130,7 +130,7 @@ const BurgerMakerViewLeft = ({ ingredients, ingredientsAdded, ingredientsRemove,
       </MainCategoryWrapper>
       <SummaryWrapper>
         <PanelName currentPrice={currentPrice}>Current burger price: </PanelName>
-        <ButtonOrder>Order now</ButtonOrder>
+        <ButtonOrder togglePopup={togglePopup}>Order now </ButtonOrder>
       </SummaryWrapper>
     </Wrapper >
   )

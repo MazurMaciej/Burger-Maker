@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import BurgerMakerViewLeft from '../organisms/BurgerMakerViewLeft';
 import BurgerMakerViewRight from '../organisms/BurgerMakerViewRight';
 import { ingredientPrices } from '../assets/data/ingredientPrices';
+import PopupWithOrderScreen from './PopupWithOrderScreen';
 
 class BurgerMakerScreen extends React.Component {
   state = {
     ingredients: {
-      egg: 0,
       cucumber: 0,
-      pickle: 0,
       tomato: 0,
       onion: 0,
       lettuce: 0,
@@ -22,21 +21,21 @@ class BurgerMakerScreen extends React.Component {
       pork: 0,
       fish: 0,
     },
-    burgerPrice: 1
+    burgerPrice: 1,
+    popupIsOpen: false,
   };
 
   render() {
     const ingredients = this.state.ingredients;
     const burgerPrice = this.state.burgerPrice;
+    const popupIsOpen = this.state.popupIsOpen;
 
     const addIngredientHandler = type => {
-      const oldCount = ingredients[type]
-      const updatedCount = oldCount + 1;
-      const updatedIngredients = {
-        ...ingredients
-      };
-      updatedIngredients[type] = updatedCount;
       const newPrice = burgerPrice + ingredientPrices[type];
+      const updatedIngredients = { ...ingredients };
+      const updatedCount = ingredients[type] + 1;
+      updatedIngredients[type] = updatedCount;
+
       this.setState({
         ingredients: updatedIngredients,
         burgerPrice: newPrice
@@ -44,9 +43,8 @@ class BurgerMakerScreen extends React.Component {
     };
 
     const removeIngredientHandler = type => {
-      const oldCount = ingredients[type];
-      if (oldCount <= 0) { return };
-      const updatedCount = oldCount - 1;
+      if (ingredients[type] <= 0) { return };
+      const updatedCount = ingredients[type] - 1;
       const updatedIngredients = { ...ingredients };
       updatedIngredients[type] = updatedCount;
       const newPrice = burgerPrice - ingredientPrices[type]
@@ -57,16 +55,47 @@ class BurgerMakerScreen extends React.Component {
       })
     };
 
+    const togglePopup = () => {
+      this.setState({
+        popupIsOpen: !popupIsOpen
+      })
+    }
+
+    const newBurger = () => {
+      this.setState({
+        ingredients: {
+          cucumber: 0,
+          tomato: 0,
+          onion: 0,
+          lettuce: 0,
+          ketchup: 0,
+          mustard: 0,
+          chedder: 0,
+          cheese: 0,
+          beef: 0,
+          chicken: 0,
+          pork: 0,
+          fish: 0,
+        },
+        burgerPrice: 1,
+        popupIsOpen: !popupIsOpen
+      })
+    }
+
     return (
-      <MainWrapper>
-        <BurgerMakerViewLeft
-          ingredients={ingredients}
-          currentPrice={burgerPrice}
-          ingredientsAdded={addIngredientHandler}
-          ingredientsRemove={removeIngredientHandler}
-        />
-        <BurgerMakerViewRight ingredients={ingredients} />
-      </MainWrapper>
+      <>
+        <MainWrapper>
+          <BurgerMakerViewLeft
+            ingredients={ingredients}
+            currentPrice={burgerPrice}
+            ingredientsAdded={addIngredientHandler}
+            ingredientsRemove={removeIngredientHandler}
+            togglePopup={togglePopup}
+          />
+          <BurgerMakerViewRight ingredients={ingredients} />
+        </MainWrapper>
+        {popupIsOpen ? <PopupWithOrderScreen togglePopup={togglePopup} newBurger={newBurger} /> : null}
+      </>
     );
   };
 };

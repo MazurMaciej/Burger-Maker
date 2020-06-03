@@ -21,11 +21,10 @@ const IngredientPanel = ({ photo, label, added, remove, number }) => {
         </ContentDivColumn>
       </ContentDivRow>
     </Wrapper>
-  )
+  );
 };
 
 export default IngredientPanel;
-
 
 const ContentDivColumn = styled.div`
   display: flex;

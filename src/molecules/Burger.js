@@ -2,27 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import BurgerIngredient from '../atoms/BurgerIngredient';
 
-const burger = (props) => {
+const Burger = ({ ingredients }) => {
   let index = 90;
+  const handleZIndex = () => index = index - 1;
 
-  const handleZIndex = () => {
-    return index = index - 1;
-  }
-
-  let transformStateToBurger = Object.keys(props.ingredients).map(item => {
-    return [...Array(props.ingredients[item])].map((_, position) => {
+  const transformStateToBurger = Object.keys(ingredients).map(item => {
+    return [...Array(ingredients[item])].map((_, position) => {
       return <BurgerIngredient key={item + position} ingredientType={item} style={{ zIndex: `${handleZIndex(index)}` }} />
     })
-  }).reduce((arr, el) => {
-    return arr.concat(el)
+  }).reduce((array, element) => {
+    return array.concat(element)
   }, []);
-
-  if (transformStateToBurger.length === 0) {
-    transformStateToBurger = <Title>Please add some ingredients to burger...</Title>
-  }
 
   return (
     <BurgerContainer>
+      {transformStateToBurger.length === 0 ? <Title>Add some ingredients to the burger...</Title> : null}
       <BurgerIngredient ingredientType='breadTop' style={{ zIndex: `100` }} />
       {transformStateToBurger}
       <BurgerIngredient ingredientType='breadBottom' style={{ zIndex: `-1` }} />
@@ -30,7 +24,7 @@ const burger = (props) => {
   );
 };
 
-export default burger;
+export default Burger;
 
 const BurgerContainer = styled.div`
   display: flex;
