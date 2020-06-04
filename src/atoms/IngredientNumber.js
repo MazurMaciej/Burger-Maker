@@ -6,6 +6,8 @@ const IngredientNumber = ({ number }) => <Area>{number}</Area>;
 export default IngredientNumber;
 
 const Area = styled.p`
+  border: none;
+  border-radius: 5px 5px 0px 0px;
   display: flex;
   background-color: white;
   justify-content: center;

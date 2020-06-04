@@ -7,6 +7,8 @@ export default ButtonPlus;
 
 const Btn = styled.button`
   align-items: center;
+  border: none;
+  border-radius: 0px 0px 5px 0px;
   background-color: white;
   cursor: pointer;
   display: flex;
@@ -14,5 +16,11 @@ const Btn = styled.button`
   height: 25px;
   justify-content: center;
   opacity: .3;
+  margin-left: 1px;
+  transition: .5s;
   width: 50%;
+
+    &:hover {
+    opacity: .5;
+  }
 `;
