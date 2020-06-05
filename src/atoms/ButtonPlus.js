@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../assets/data/mediaQueries';
 
 const ButtonPlus = ({ added }) => <Btn onClick={added}>+</Btn>
 
@@ -22,5 +23,9 @@ const Btn = styled.button`
 
     &:hover {
     opacity: .5;
+  }
+
+  @media ${device.laptopXL} {
+    font-size: 25px;
   }
 `;

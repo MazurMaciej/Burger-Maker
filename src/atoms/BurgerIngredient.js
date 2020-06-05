@@ -73,6 +73,5 @@ export default BurgerIngredient;
 const IngredientImage = styled.img`
   margin: 0 auto;
   width: 35%;
-  /* margin-bottom: -88px; */
   margin-bottom: -14%;
 `;

@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { device } from '../assets/data/mediaQueries';
 import BurgerMakerViewLeft from '../organisms/BurgerMakerViewLeft';
 import BurgerMakerViewRight from '../organisms/BurgerMakerViewRight';
 import { ingredientPrices } from '../assets/data/ingredientPrices';
 import PopupWithOrderScreen from './PopupWithOrderScreen';
+import logo from '../assets/img/logo.svg';
 
 class BurgerMakerScreen extends React.Component {
   state = {
@@ -95,6 +98,7 @@ class BurgerMakerScreen extends React.Component {
           <BurgerMakerViewRight ingredients={ingredients} />
         </MainWrapper>
         {popupIsOpen ? <PopupWithOrderScreen togglePopup={togglePopup} newBurger={newBurger} /> : null}
+        <Link to='/'><Logo src={logo} /></Link>
       </>
     );
   };
@@ -106,4 +110,20 @@ const MainWrapper = styled.div`
   display: flex;
   height: 100vh;
   width: 100%;
+  @media ${device.tablet} {
+    flex-direction: column;
+  }
+  @media ${device.laptop} {
+    flex-direction: row;
+  }
+    @media ${device.laptopXL} {
+  flex-direction: row;  
+  }    
+`;
+
+const Logo = styled.img`
+  bottom: 2%;
+  position: absolute;
+  right: 2%;
+  width: 5%;
 `;

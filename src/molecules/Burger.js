@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BurgerIngredient from '../atoms/BurgerIngredient';
+import { device } from '../assets/data/mediaQueries';
 
 const Burger = ({ ingredients }) => {
   let index = 90;
@@ -43,4 +44,8 @@ const Title = styled.p`
   position: absolute;
   top: 50%;
   width: 100%;
+
+  @media ${device.laptopXL} {
+    font-size: 40px;
+  }
 `;

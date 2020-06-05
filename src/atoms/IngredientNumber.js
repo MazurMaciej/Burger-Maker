@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../assets/data/mediaQueries';
 
 const IngredientNumber = ({ number }) => <Area>{number}</Area>;
 
@@ -17,4 +18,8 @@ const Area = styled.p`
   height: 25px;
   width: 100%;
   margin: 0 0 2px 0;
+
+  @media ${device.laptopXL} {
+    font-size: 25px;
+  }
 `;

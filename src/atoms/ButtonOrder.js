@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../assets/data/mediaQueries';
 
-const ButtonOrder = ({ children, togglePopup }) => <Btn onClick={togglePopup}>{children}</Btn>;
+export const ButtonOrder = ({ children, togglePopup }) => <Btn onClick={togglePopup}>{children}</Btn>;
 
-export default ButtonOrder;
-
-const Btn = styled.button`
+export const Btn = styled.button`
   background-color: #FFCB00;
   border: 2px transparent solid;
   border-radius: 20px;
@@ -24,5 +23,13 @@ const Btn = styled.button`
     background-color: #000;
     color: #FFCB00;
     border: 2px #FFCB00 solid;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+@media ${device.laptopXL} {
+  font-size: 25px;
   }
 `;

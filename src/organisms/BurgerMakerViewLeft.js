@@ -4,8 +4,9 @@ import SubpageTitle from '../atoms/SubpageTitle';
 import NameIngredientsCategory from '../atoms/NameIngredientsCategory';
 import IngredientPanel from '../molecules/IngredientPanel';
 import PanelName from '../atoms/PanelName';
-import ButtonOrder from '../atoms/ButtonOrder';
+import { ButtonOrder } from '../atoms/ButtonOrder';
 import { IngredientsList } from '../assets/data/arrayWithIngredients';
+import { device } from '../assets/data/mediaQueries';
 
 const BurgerMakerViewLeft = ({ ingredients, ingredientsAdded, ingredientsRemove, currentPrice, togglePopup }) => {
 
@@ -144,6 +145,9 @@ const CategoryWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 5%;
   width: 30%;
+  @media ${device.tablet} {
+    width: 32%;
+  }
 `;
 
 const LastCategoryWrapper = styled.div`
@@ -152,6 +156,22 @@ const LastCategoryWrapper = styled.div`
 const MainCategoryWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  height: 75vh;
+  @media ${device.tablet} {
+    height: 50vh;
+  }
+  @media ${device.laptop} {
+    height: 65vh;
+  }
+  @media ${device.laptopL} {
+    height: 75vh;
+  }
+  @media ${device.laptopXL} {
+    height: 60vh;
+  }
+  @media ${device.desktop} {
+    height: 65vh;
+  }
 `;
 
 const SummaryWrapper = styled.div`
@@ -168,4 +188,19 @@ const Wrapper = styled.div`
   width: 50%;
   padding-left: 80px;
   padding-right: 80px;
+  @media ${device.tablet} {
+    padding-left: 40px;
+    padding-right: 30px;
+    width: 100%;
+  }
+  @media ${device.laptop} {
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 50%;
+  } 
+  @media ${device.laptopXL} {
+    padding-left: 80px;
+    padding-right: 80px;
+  }   
+
 `;
