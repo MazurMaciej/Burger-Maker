@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import { device } from '../assets/data/mediaQueries';
 import backgroundBottom from '../assets/img/wooden-bgc.png'
 
-const BackgroundBottom = () => <BackgroundDiv />
+const BackgroundBottom = ({ children }) => (
+    <BackgroundDiv>
+        {children}
+    </BackgroundDiv>
+);
 
 const BackgroundDiv = styled.div`
+    align-items: flex-end;
     background-image: url(${backgroundBottom});
     background-repeat: no-repeat;
     background-size: cover;
-    bottom: 0;
+    display: flex;
     height: 27vh;
-    position: absolute;
-    right: 0;
+    justify-content: center;
     width: 100%;
-  @media ${device.mobileXL} {
-        height: 28vh;
-    }
 `;
 
 export default BackgroundBottom;

@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
 import { device } from '../assets/data/mediaQueries';
+
 import BackgroundBottom from '../atoms/BackgroundBottom';
 import BackgroundTop from '../atoms/BackgroundTop';
 import Title from '../atoms/Title';
-import { Btn } from '../atoms/ButtonOrder';
+import WelcomeButton from '../atoms/WelcomeButton';
 import { ReactComponent as Burger } from '../assets/img/burger.svg';
 
 const BackgroundWelcome = () => {
@@ -22,31 +23,32 @@ const BackgroundWelcome = () => {
     const cheese = elements.getElementById('cheese');
     const meat = elements.getElementById('meat');
     const breadBottom = elements.getElementById('bread-bottom');
-
-    gsap.set([breadTop, onion, tomato, salad, ketchup, cheese, meat, breadBottom], { autoAlpha: 0.05 });
+    gsap.set([breadTop, onion, tomato, salad, ketchup, cheese, meat, breadBottom], { autoAlpha: 0 });
 
     const tl = gsap.timeline({ defaults: { ease: 'back.out(1.2)' } });
-    tl.fromTo(breadBottom, { y: '-=400' }, { duration: .5, y: '+=400', autoAlpha: 1 })
-      .fromTo(meat, { y: '-=400' }, { duration: .5, y: '+=400', autoAlpha: 1 })
-      .fromTo(cheese, { y: '-=400' }, { duration: .5, y: '+=400', autoAlpha: 1 })
-      .fromTo(ketchup, { y: '-=400' }, { duration: .5, y: '+=400', autoAlpha: 1 })
-      .fromTo(salad, { y: '-=400' }, { duration: .5, y: '+=400', autoAlpha: 1 })
-      .fromTo(tomato, { y: '-=400' }, { duration: .5, y: '+=400', autoAlpha: 1 })
-      .fromTo(onion, { y: '-=400' }, { duration: .5, y: '+=400', autoAlpha: 1 })
-      .fromTo(breadTop, { y: '-=400' }, { duration: .5, y: '+=400', autoAlpha: 1 })
+    tl.fromTo(breadBottom, { y: '-=300' }, { duration: .25, y: '+=300', autoAlpha: 1 })
+      .fromTo(meat, { y: '-=300' }, { duration: .25, y: '+=300', autoAlpha: 1 })
+      .fromTo(cheese, { y: '-=350' }, { duration: .25, y: '+=300', autoAlpha: 1 })
+      .fromTo(ketchup, { y: '-=300' }, { duration: .25, y: '+=300', autoAlpha: 1 })
+      .fromTo(salad, { y: '-=300' }, { duration: .25, y: '+=300', autoAlpha: 1 })
+      .fromTo(tomato, { y: '-=300' }, { duration: .2, y: '+=300', autoAlpha: 1 })
+      .fromTo(onion, { y: '-=300' }, { duration: .2, y: '+=300', autoAlpha: 1 })
+      .fromTo(breadTop, { y: '-=300' }, { duration: .5, y: '+=300', autoAlpha: 1 })
   });
 
   return (
     <MainWrapper>
-      <BackgroundTop />
-      <Title name='Welcome in' subname='BURGER MAKER' />
+      <BackgroundTop>
+        <Title name='Welcome in' subname='BURGER MAKER' />
+      </BackgroundTop>
+      <BackgroundBottom>
+        <WelcomeButton>
+          <Link to='/burger' style={{ textDecoration: 'none', color: '#000', padding: '10px 30px 7px 30px' }}>Make a Burger</Link>
+        </WelcomeButton>
+      </BackgroundBottom>
       <BurgerWrapper ref={wrapper}>
         <Burger />
       </BurgerWrapper>
-      <CallButton>
-        <Link to='/burger' style={{ textDecoration: 'none', color: '#000', padding: '10px 30px 7px 30px' }}>Make a Burger</Link>
-      </CallButton>
-      <BackgroundBottom />
     </MainWrapper>
   )
 };
@@ -54,7 +56,6 @@ const BackgroundWelcome = () => {
 export default BackgroundWelcome;
 
 const MainWrapper = styled.div`
-  background-color: black;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -62,82 +63,24 @@ const MainWrapper = styled.div`
   width: 100%;
 `;
 
-const CallButton = styled(Btn)`
-   position: absolute;
-   bottom: 5%;
-   left: 50%;
-   margin-right: 0;
-   font-size: 35px;
-   transform: translateX(-50%);
-   z-index: 11;
-  &:hover {
-    background-color: #FFCB00;
-    color: #FFCB00;
-    border: 2px #000 solid;
-  }
-  @media ${device.desktopL} {
-    padding: 20px 50px 12px 50px;
-    font-size: 35px;
-  }
-  @media ${device.laptopL} {
-    padding: 20px 20px 12px 20px;
-    font-size: 25px;
-    }
-  @media ${device.tablet} {
-    padding: 20px 5px 12px 5px;
-    }
-  @media ${device.mobileL} {
-    font-size: 24px;
-    }
-  @media ${device.mobileM} {
-    font-size: 19px;
-    padding: 20px 0px 12px 0px;
-    }
-`;
-
 const BurgerWrapper = styled.div`
+  align-items: flex-end;
   position: absolute;
-  bottom: -3%;  
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  top: 0;
   left: 50%;
   z-index: 10;
   transform: translateX(-50%);
-  text-align: center;
-    @media ${device.desktopXL} {
-      bottom: 14%;
-    }
-    @media ${device.laptopL} {
-      bottom: -3%;
-    }
-    @media ${device.tabletXL}  {
-      bottom: 5%;
-      width: 50%;
-    }
-    @media ${device.mobileXL} {
-      width: 75%;
-      bottom: -13vh;
-    }
-    @media ${device.mobileM} {
-      bottom: -12vh;
-    }
-    @media ${device.mobileS} {
-      bottom: -15vh;
-    }
 
   svg {
-    @media ${device.desktopL} {
-      width: 100%;
-    }
-    @media ${device.laptopXL} {
-      width: 90%;
-    }
-    @media ${device.laptopL} {
-      width: 50%;
-    }
-    @media ${device.tabletXL} {
-      width: 70%;
-    }
+    width: 40vh;
+    height: auto;
+    margin-bottom: 15vh;
+    
     @media ${device.mobileXL} {
-      width: 55%;
-    }
-  } 
+      width: 30vh;
+  }
+  }
 `;
