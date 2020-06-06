@@ -5,3 +5,9 @@ body {
 	font-family: 'Yanone Kaffeesatz';
 	overflow: hidden;
 }
+
+@media (max-width: 1024px) {
+	body {
+		overflow: auto;
+	}
+}

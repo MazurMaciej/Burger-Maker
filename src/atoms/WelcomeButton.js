@@ -35,17 +35,11 @@ const Btn = styled.button`
    font-size: 55px;
   }
   @media ${device.laptopXL} {
-   font-size: 40px;
-  }
-  @media ${device.laptopL} {
-   font-size: 25px;
+   font-size: 30px;
   }
   @media ${device.tabletXL} {
    font-size: 30px;
    margin-bottom: 3%;
-  }
-  @media ${device.tabletXL} {
-   margin-bottom: 8%;
   }
   @media ${device.mobileXL} {
    font-size: 20px;
