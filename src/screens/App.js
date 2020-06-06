@@ -6,7 +6,7 @@ import BurgerMakerScreen from './BurgerMakerScreen';
 
 const App = () => (
   <Router>
-    <Route exact path='/Burger-Maker/' component={WelcomeScreen} />
+    <Route exact path='/' component={WelcomeScreen} />
     <Route path='/burger' component={BurgerMakerScreen} />
   </Router>
 );
