@@ -1,23 +1,25 @@
 const size = {
-  mobileS: '320px',
-  mobileM: '375px',
-  mobileL: '475px',
+  mobileS: '360px',
+  mobileM: '420px',
+  mobileL: '500px',
+  mobileXL: '580px',
   tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
+  tabletXL: '1024px',
+  laptopL: '1500px',
   laptopXL: '1700px',
-  desktop: '2000px',
-  desktopXL: '2560px'
+  desktopL: '2560px',
+  desktopXL: '3000px'
 };
 
 export const device = {
-  desktopXL: `(min-width: ${size.desktopXL})`,
-  desktop: `(min-width: ${size.desktop})`,
-  laptopXL: `(min-width: ${size.laptopXL})`,
-  laptopL: `(min-width: ${size.laptopL})`,
-  laptop: `(min-width: ${size.laptop})`,
-  tablet: `(min-width: ${size.tablet})`,
+  mobileS: `(max-width: ${size.mobileS})`,
+  mobileM: `(max-width: ${size.mobileM})`,
   mobileL: `(max-width: ${size.mobileL})`,
-  mobileM: `(min-width: ${size.mobileM})`,
-  mobileS: `(min-width: ${size.mobileS})`,
+  mobileXL: `(max-width: ${size.mobileXL})`,
+  tablet: `(max-width: ${size.tablet})`,
+  tabletXL: `(max-width: ${size.tabletXL})`,
+  laptopL: `(max-width: ${size.laptopL})`,
+  laptopXL: `(max-width: ${size.laptopXL})`,
+  desktopL: `(max-width: ${size.desktopXL})`,
+  desktopXL: `(max-width: ${size.desktopXL})`,
 };

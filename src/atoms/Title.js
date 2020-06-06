@@ -22,27 +22,21 @@ const WelcomeTitle = styled.h1`
   left: 0;
   right: 0;
   text-align: center;
-  @media ${device.mobileS} {
-    font-size: 42px
-  }
-  @media ${device.mobileM} {
-    font-size: 42px;
-    width: 90%;
-    margin: auto;
-  }
-  @media ${device.mobileL} {
-    font-size: 50px
-  }
-  @media ${device.tablet} {
-    font-size: 70px
+
+  @media ${device.desktopL} {
+    font-size: 110px;
+    top: 8%;
   }
   @media ${device.laptopXL} {
-    font-size: 100px
+    font-size: 100px;
   }
-  @media ${device.desktop} {
-    font-size: 120px
+  @media ${device.tablet} {
+    font-size: 85px;
   }
-  @media ${device.desktopXL} {
-    font-size: 130px
+  @media ${device.mobileXL} {
+    font-size: 70px;
+  }
+  @media ${device.mobile} {
+    font-size: 60px;
   }
 `;
