@@ -70,7 +70,6 @@ const MainWrapper = styled.div`
   font-family: 'Yanone Kaffeesatz';
   position: relative;
   width: 100%;
-  overflow: hidden;
   max-height: 100vh;
   max-height: -webkit-fill-available;
 `;

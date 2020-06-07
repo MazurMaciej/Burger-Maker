@@ -78,6 +78,6 @@ const IngredientImage = styled.img`
   margin-bottom: -14%;
   @media ${device.mobileXL} {
     width: 45%;
-    margin-bottom: -16%;
+    margin-bottom: -18%;
   }
 `;
