@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../assets/data/mediaQueries';
 
 import { IngredientsList } from '../assets/data/arrayWithIngredients';
 
@@ -75,4 +76,8 @@ const IngredientImage = styled.img`
   margin: 0 auto;
   width: 35%;
   margin-bottom: -14%;
+  @media ${device.mobileXL} {
+    width: 45%;
+    margin-bottom: -16%;
+  }
 `;

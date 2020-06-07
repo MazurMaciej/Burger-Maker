@@ -37,5 +37,6 @@ const WelcomeTitle = styled.h1`
   }
   @media ${device.mobileXL} {
    font-size: 50px;
+    margin-top: 15vh;
   }
 `;

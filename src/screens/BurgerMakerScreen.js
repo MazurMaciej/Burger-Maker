@@ -8,7 +8,6 @@ import BurgerMakerViewRight from '../organisms/BurgerMakerViewRight';
 import { ingredientPrices } from '../assets/data/ingredientPrices';
 import PopupWithOrderScreen from './PopupWithOrderScreen';
 import logo from '../assets/img/logo.svg';
-// import MobileWIPScreen from '../screens/MobileWIPScreen';
 
 class BurgerMakerScreen extends React.Component {
   state = {
@@ -101,7 +100,6 @@ class BurgerMakerScreen extends React.Component {
           <Link to='/'><Logo src={logo} /></Link>
         </MainWrapper>
         {popupIsOpen ? <PopupWithOrderScreen togglePopup={togglePopup} newBurger={newBurger} /> : null}
-        {/* <MobileWIPScreen /> */}
       </>
     );
   };
@@ -129,9 +127,17 @@ const Logo = styled.img`
   @media ${device.tabletXL} {
     width: 10%;
     top: 2%;
+    bottom: auto;
   }
   @media ${device.tablet} {
     width: 13%;
+    right: 5%;
   }
+  /* @media ${device.mobileXL} {
+    width: 80px;
+    height: 40px;
+    right: 50%;
+    transform: translateX(50%)
+  } */
 `;
 

@@ -116,18 +116,10 @@ const BurgerMakerViewLeft = ({ ingredients, ingredientsAdded, ingredientsRemove,
           {buildControls(4, 8)}
         </CategoryWrapper >
         <CategoryWrapper>
-          <LastCategoryWrapper>
-            <NameIngredientsCategory>
-              Cheese
+          <NameIngredientsCategory>
+            Other
           </NameIngredientsCategory>
-            {buildControls(8, 10)}
-          </LastCategoryWrapper>
-          <LastCategoryWrapper>
-            <NameIngredientsCategory>
-              Sauce
-          </NameIngredientsCategory>
-            {buildControls(10, 12)}
-          </LastCategoryWrapper>
+          {buildControls(8, 12)}
         </CategoryWrapper>
       </MainCategoryWrapper>
       <SummaryWrapper>
@@ -158,6 +150,9 @@ const MainCategoryWrapper = styled.div`
   }
     @media ${device.tablet} {
       width: 85%;
+  }
+    @media ${device.mobileXL} {
+      width: 95%;
   }
 `;
 
@@ -190,6 +185,6 @@ const Wrapper = styled.div`
     align-items: center;
   }
   @media ${device.tablet} {
-    padding-top: 4vh;
+    padding-top: 7vh;
   }
 `;

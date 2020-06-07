@@ -38,6 +38,9 @@ const ContentDivColumn = styled.div`
     @media ${device.tablet} {
       width: 11vw;
   }
+    @media ${device.mobileXL} {
+      width: 14vw;
+  }
 `;
 
 const ContentDivRow = styled.div`

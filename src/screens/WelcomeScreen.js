@@ -68,9 +68,11 @@ const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-family: 'Yanone Kaffeesatz';
-  height: 100vh;
   position: relative;
   width: 100%;
+  overflow: hidden;
+  max-height: 100vh;
+  max-height: -webkit-fill-available;
 `;
 
 const BurgerWrapper = styled.div`
