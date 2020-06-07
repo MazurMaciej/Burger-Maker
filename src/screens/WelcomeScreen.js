@@ -40,9 +40,9 @@ const BackgroundWelcome = () => {
       .fromTo(tomato, { y: '-=300' }, { duration: .2, y: '+=300', autoAlpha: 1 })
       .fromTo(onion, { y: '-=300' }, { duration: .2, y: '+=300', autoAlpha: 1 })
       .fromTo(breadTop, { y: '-=300' }, { duration: .5, y: '+=300', autoAlpha: 1 })
-      .fromTo(title, { x: '-=1000' }, { duration: 1, x: '+=1000', autoAlpha: 1 })
+      .fromTo(title, { x: '-=1000' }, { duration: 1.5, x: '+=1000', autoAlpha: 1 })
 
-    tl2.fromTo(background, { autoAlpha: .6 }, { duration: 2, autoAlpha: 1 })
+    tl2.fromTo(background, { autoAlpha: .5 }, { duration: 2, autoAlpha: 1 })
   }, []);
 
   return (

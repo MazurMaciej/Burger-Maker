@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../assets/data/mediaQueries';
+
 import SubpageTitle from '../atoms/SubpageTitle';
 import NameIngredientsCategory from '../atoms/NameIngredientsCategory';
 import IngredientPanel from '../molecules/IngredientPanel';
 import PanelName from '../atoms/PanelName';
 import { ButtonOrder } from '../atoms/ButtonOrder';
 import { IngredientsList } from '../assets/data/arrayWithIngredients';
-import { device } from '../assets/data/mediaQueries';
 
 const BurgerMakerViewLeft = ({ ingredients, ingredientsAdded, ingredientsRemove, currentPrice, togglePopup }) => {
 
@@ -143,15 +144,6 @@ const CategoryWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 5%;
-  width: 30%;
-  @media ${device.laptopL} {
-    width: 32%;
-  }
-  @media ${device.tabletXL} {
-    width: 28%;
-    align-items: center;
-  }
 `;
 
 const LastCategoryWrapper = styled.div`
@@ -160,21 +152,12 @@ const LastCategoryWrapper = styled.div`
 const MainCategoryWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 75vh;
-  @media ${device.desktopL} {
-    height: 65vh;
+  margin-bottom: 3vh;
+    @media ${device.tabletXL} {
+     width: 60%;
   }
-  @media ${device.laptopXL} {
-    height: 60vh;
-  }
-  @media ${device.laptopL} {
-    height: 75vh;
-  }
-  @media ${device.tabletXL} {
-    height: 40vh;
-  }
-  @media ${device.tabletXL} {
-    height: 50vh;
+    @media ${device.tablet} {
+      width: 85%;
   }
 `;
 
@@ -185,30 +168,28 @@ const SummaryWrapper = styled.div`
 
     @media ${device.tabletXL} {
       margin-bottom: 25px;
+      width: 60%;
+  }
+    @media ${device.tablet} {
+      width: 85%;
   }
 `;
 
 const Wrapper = styled.div`
   background-color: black;
+  justify-content: space-around;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   width: 50%;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding: 3vw;
   @media ${device.laptopXL} {
-    padding-left: 80px;
-    padding-right: 80px;
   }   
   @media ${device.tabletXL} {
-    padding-left: 0px;
-    padding-right: 0px;
     width: 100%;
-    height: 53vh;
     justify-content: center;
     align-items: center;
   }
   @media ${device.tablet} {
-    height: 70vh;
+    padding-top: 4vh;
   }
 `;

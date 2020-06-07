@@ -59,4 +59,7 @@ const Title = styled.p`
   @media ${device.tabletXL} {
     font-size: 30px;
   }
+  @media ${device.tablet} {
+    font-size: 25px;
+  }
 `;

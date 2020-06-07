@@ -21,6 +21,9 @@ const Title = styled.p`
   @media ${device.laptopL} {
   font-size: 22px;
   }
+  @media ${device.tablet} {
+    font-size: 18px;
+  }
 `;
 
 const Price = styled.span`
@@ -33,5 +36,8 @@ const Price = styled.span`
   }
   @media ${device.laptopL} {
   font-size: 28px;
+  }
+  @media ${device.tablet} {
+    font-size: 25px;
   }
 `;

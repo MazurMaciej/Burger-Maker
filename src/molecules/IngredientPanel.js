@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../assets/data/mediaQueries';
+
 import PanelName from '../atoms/PanelName';
 import IgredientPhoto from '../atoms/IgredientPhoto';
 import IngredientNumber from '../atoms/IngredientNumber';
@@ -30,21 +31,20 @@ export default IngredientPanel;
 const ContentDivColumn = styled.div`
   display: flex;
   flex-direction: column;
-  padding-left: 15px;
-  width: 30%;
+  width: 3vw;
+    @media ${device.tabletXL} {
+      width: 6vw;
+  }
+    @media ${device.tablet} {
+      width: 11vw;
+  }
 `;
 
 const ContentDivRow = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const Wrapper = styled.div`
-  margin: 15px 0;
-  width: 80%; 
-  @media ${device.laptopL} {
-    width: 70%;
-  }
-  @media ${device.tabletXL} {
-    width: 60%;
-  }
+  margin: 1.5vh 0;
 `;

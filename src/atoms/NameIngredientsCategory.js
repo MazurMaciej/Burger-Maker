@@ -17,4 +17,7 @@ const Title = styled.h3`
   @media ${device.laptopXL} {
     font-size: 30px; 
   }
+  @media ${device.tablet} {
+    font-size: 25px;
+  }
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { IngredientsList } from '../assets/data/arrayWithIngredients';
 
 const BurgerIngredient = ({ ingredientType, style }) => {

@@ -13,8 +13,7 @@ export const Btn = styled.button`
   font-size: 18px;
   font-family:'Yanone Kaffeesatz';
   font-weight: 700;
-  margin-right: 7%;
-  padding: 10px 30px 7px 30px;
+  padding: 10px 32px 7px 30px;
   letter-spacing: .5px;
   text-transform: uppercase;
   transition: 1s;
@@ -32,6 +31,9 @@ export const Btn = styled.button`
   font-size: 25px;
   }
 @media ${device.laptopL} {
-  font-size: 18px;
+  font-size: 16px;
+  }
+@media ${device.tablet} {
+  padding: 5px 30px 2px 30px;
   }
 `;
