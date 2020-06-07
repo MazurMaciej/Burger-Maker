@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import backgroundBottom from '../assets/img/wooden-bgc.png'
 
-const BackgroundBottom = ({ children }) => (
-    <BackgroundDiv>
+const BackgroundBottom = ({ children, animation }) => (
+    <BackgroundDiv ref={animation}>
         {children}
     </BackgroundDiv>
 );

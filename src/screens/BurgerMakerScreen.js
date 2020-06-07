@@ -113,6 +113,7 @@ const MainWrapper = styled.div`
   display: flex;
   height: 100vh;
   width: 100%;
+  font-family: 'Yanone Kaffeesatz';
 
   @media ${device.tabletXL} {
     flex-direction: column;

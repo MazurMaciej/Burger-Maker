@@ -31,11 +31,14 @@ const Btn = styled.button`
   &:focus {
     outline: none;
   }
-  @media ${device.desktopL} {
+  @media ${device.desktopXL} {
    font-size: 55px;
   }
   @media ${device.laptopXL} {
    font-size: 30px;
+  }
+  @media ${device.laptopL} {
+   font-size: 20px;
   }
   @media ${device.tabletXL} {
    font-size: 30px;

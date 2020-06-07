@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
 import { device } from '../assets/data/mediaQueries';
-
 import BackgroundBottom from '../atoms/BackgroundBottom';
 import BackgroundTop from '../atoms/BackgroundTop';
 import Title from '../atoms/Title';
@@ -12,6 +11,8 @@ import { ReactComponent as Burger } from '../assets/img/burger.svg';
 
 const BackgroundWelcome = () => {
   const wrapper = useRef(null);
+  const titleAnimation = useRef(null);
+  const backgroundAnimation = useRef(null);
 
   useEffect(() => {
     const [elements] = wrapper.current.children;
@@ -23,10 +24,15 @@ const BackgroundWelcome = () => {
     const cheese = elements.getElementById('cheese');
     const meat = elements.getElementById('meat');
     const breadBottom = elements.getElementById('bread-bottom');
-    gsap.set([breadTop, onion, tomato, salad, ketchup, cheese, meat, breadBottom], { autoAlpha: 0 });
+    const title = titleAnimation.current;
+    const background = backgroundAnimation.current;
+
+    gsap.set([breadTop, onion, tomato, salad, ketchup, cheese, meat, breadBottom, title], { autoAlpha: 0 });
 
     const tl = gsap.timeline({ defaults: { ease: 'back.out(1.2)' } });
-    tl.fromTo(breadBottom, { y: '-=300' }, { duration: .25, y: '+=300', autoAlpha: 1 })
+    const tl2 = gsap.timeline({ defaults: { ease: 'back.out(1.2)' } });
+
+    tl.fromTo(breadBottom, { y: '-=300' }, { duration: .3, y: '+=300', autoAlpha: 1 })
       .fromTo(meat, { y: '-=300' }, { duration: .25, y: '+=300', autoAlpha: 1 })
       .fromTo(cheese, { y: '-=350' }, { duration: .25, y: '+=300', autoAlpha: 1 })
       .fromTo(ketchup, { y: '-=300' }, { duration: .25, y: '+=300', autoAlpha: 1 })
@@ -34,14 +40,17 @@ const BackgroundWelcome = () => {
       .fromTo(tomato, { y: '-=300' }, { duration: .2, y: '+=300', autoAlpha: 1 })
       .fromTo(onion, { y: '-=300' }, { duration: .2, y: '+=300', autoAlpha: 1 })
       .fromTo(breadTop, { y: '-=300' }, { duration: .5, y: '+=300', autoAlpha: 1 })
-  });
+      .fromTo(title, { x: '-=1000' }, { duration: 1, x: '+=1000', autoAlpha: 1 })
+
+    tl2.fromTo(background, { autoAlpha: .6 }, { duration: 2, autoAlpha: 1 })
+  }, []);
 
   return (
     <MainWrapper>
       <BackgroundTop>
-        <Title name='Welcome in' subname='BURGER MAKER' />
+        <Title animation={titleAnimation} name='Welcome in' subname='BURGER MAKER' />
       </BackgroundTop>
-      <BackgroundBottom>
+      <BackgroundBottom animation={backgroundAnimation}>
         <WelcomeButton>
           <Link to='/burger' style={{ textDecoration: 'none', color: '#000', padding: '10px 30px 7px 30px' }}>Make a Burger</Link>
         </WelcomeButton>
@@ -58,6 +67,7 @@ export default BackgroundWelcome;
 const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: 'Yanone Kaffeesatz';
   height: 100vh;
   position: relative;
   width: 100%;
