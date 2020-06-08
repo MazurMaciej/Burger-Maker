@@ -48,7 +48,7 @@ const BackgroundWelcome = () => {
   return (
     <MainWrapper>
       <BackgroundTop>
-        <Title animation={titleAnimation} name='Welcome in' subname='BURGER MAKER' />
+        <Title animation={titleAnimation} name='Welcome to' subname='BURGER MAKER' />
       </BackgroundTop>
       <BackgroundBottom animation={backgroundAnimation}>
         <WelcomeButton>

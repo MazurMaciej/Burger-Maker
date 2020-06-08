@@ -40,8 +40,8 @@ const BurgerIngredient = ({ ingredientType, style }) => {
       ingredient = <IngredientImage src={IngredientsList[7]} alt="onion" style={style} />
       break;
 
-    case ('chedder'):
-      ingredient = <IngredientImage src={IngredientsList[8]} alt="chedder" style={style} />
+    case ('cheddar'):
+      ingredient = <IngredientImage src={IngredientsList[8]} alt="cheddar" style={style} />
       break;
 
     case ('cheese'):

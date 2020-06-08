@@ -61,10 +61,10 @@ const BurgerMakerViewLeft = ({ ingredients, ingredientsAdded, ingredientsRemove,
       number: ingredients.onion
     },
     {
-      label: 'Chedder',
-      type: 'chedder',
+      label: 'Cheddar',
+      type: 'cheddar',
       photo: IngredientsList[8],
-      number: ingredients.chedder
+      number: ingredients.cheddar
     },
     {
       label: 'Cheese',
@@ -117,7 +117,7 @@ const BurgerMakerViewLeft = ({ ingredients, ingredientsAdded, ingredientsRemove,
         </CategoryWrapper >
         <CategoryWrapper>
           <NameIngredientsCategory>
-            Other
+            Others
           </NameIngredientsCategory>
           {buildControls(8, 12)}
         </CategoryWrapper>

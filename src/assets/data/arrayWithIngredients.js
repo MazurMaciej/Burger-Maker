@@ -5,7 +5,7 @@ import pork from '../img/pork.svg';
 import fish from '../img/fish.svg';
 
 //cheese
-import chedder from '../img/chedder.svg';
+import cheddar from '../img/cheddar.svg';
 import cheese from '../img/cheese.svg';
 
 //vegetables 
@@ -23,4 +23,4 @@ import breadTop from '../img/breadTop.svg';
 import breadBottom from '../img/breadBottom.svg';
 
 export const IngredientsList =
-  [beef, chicken, pork, fish, tomato, cucumber, lettuce, onion, chedder, cheese, ketchup, mustard, breadTop, breadBottom];
+  [beef, chicken, pork, fish, tomato, cucumber, lettuce, onion, cheddar, cheese, ketchup, mustard, breadTop, breadBottom];

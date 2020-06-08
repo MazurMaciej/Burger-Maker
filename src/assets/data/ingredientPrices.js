@@ -5,7 +5,7 @@ export const ingredientPrices = {
   lettuce: .25,
   ketchup: .2,
   mustard: .2,
-  chedder: .75,
+  cheddar: .75,
   cheese: .75,
   beef: 1.5,
   chicken: 1.25,

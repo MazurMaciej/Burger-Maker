@@ -1,8 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
 import { device } from '../assets/data/mediaQueries';
+
 import BurgerMakerViewLeft from '../organisms/BurgerMakerViewLeft';
 import BurgerMakerViewRight from '../organisms/BurgerMakerViewRight';
 import { ingredientPrices } from '../assets/data/ingredientPrices';
@@ -134,5 +135,11 @@ const Logo = styled.img`
     width: 13%;
     right: 5%;
   }
+  /* @media ${device.mobileXL} {
+    width: 80px;
+    height: 40px;
+    right: 50%;
+    transform: translateX(50%)
+  } */
 `;
 

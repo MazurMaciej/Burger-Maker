@@ -1,7 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import ReactLoading from "react-loading";
-import "bootstrap/dist/css/bootstrap.css";
 import styled from 'styled-components';
 // import WelcomeScreen from './WelcomeScreen';
 import BurgerMakerScreen from './BurgerMakerScreen';
@@ -13,7 +11,6 @@ const App = () => {
       <Suspense fallback={
         <LoadingWrapper>
           <LoadingTitle>Loading...</LoadingTitle>
-          <ReactLoading type={"bars"} color={"white"} />
         </LoadingWrapper>
       }>
         <Route exact path='/' component={WelcomeScreen} />
