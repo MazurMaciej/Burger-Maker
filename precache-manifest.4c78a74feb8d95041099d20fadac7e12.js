@@ -1,43 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2780e5a53dc8bbbfbed1a5a56d63a727",
+    "revision": "c007afc1a91e9e482de87647cffe12ae",
     "url": "/Burger-Maker/index.html"
   },
   {
-    "revision": "c169094929902e57b697",
-    "url": "/Burger-Maker/static/css/2.dbdc83ee.chunk.css"
-  },
-  {
-    "revision": "a2710d3dc3ad65eef9bc",
+    "revision": "8a49bc3556bcbf8153bc",
     "url": "/Burger-Maker/static/css/main.ebcab9a3.chunk.css"
   },
   {
-    "revision": "c169094929902e57b697",
-    "url": "/Burger-Maker/static/js/2.0f896826.chunk.js"
+    "revision": "b8be74a7b337b3ea2af5",
+    "url": "/Burger-Maker/static/js/2.6c7dc167.chunk.js"
   },
   {
-    "revision": "e23d72e353070f497294c1592aa53554",
-    "url": "/Burger-Maker/static/js/2.0f896826.chunk.js.LICENSE.txt"
+    "revision": "c64c486544348f10a6d6c716950bc223",
+    "url": "/Burger-Maker/static/js/2.6c7dc167.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "be2e3c5c86080453e17b",
-    "url": "/Burger-Maker/static/js/3.238ea3ab.chunk.js"
+    "revision": "c4796c801ac6016eceda",
+    "url": "/Burger-Maker/static/js/3.36d2f89e.chunk.js"
   },
   {
     "revision": "b1490fa66c5ae57823e5053d1f615134",
-    "url": "/Burger-Maker/static/js/3.238ea3ab.chunk.js.LICENSE.txt"
+    "url": "/Burger-Maker/static/js/3.36d2f89e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "913e7ee87cf02cb5ecb1",
-    "url": "/Burger-Maker/static/js/4.90efc7db.chunk.js"
+    "revision": "7180dc4ab9674f912410",
+    "url": "/Burger-Maker/static/js/4.983e5358.chunk.js"
   },
   {
-    "revision": "a2710d3dc3ad65eef9bc",
-    "url": "/Burger-Maker/static/js/main.cc2c172b.chunk.js"
+    "revision": "8a49bc3556bcbf8153bc",
+    "url": "/Burger-Maker/static/js/main.af540b14.chunk.js"
   },
   {
-    "revision": "e29624727ef970824536",
-    "url": "/Burger-Maker/static/js/runtime-main.328154fd.js"
+    "revision": "8e6fe22e56cdd078e826",
+    "url": "/Burger-Maker/static/js/runtime-main.d0dbdd12.js"
   },
   {
     "revision": "6e9965f38e1487b5f7e43a3f67d26eef",
