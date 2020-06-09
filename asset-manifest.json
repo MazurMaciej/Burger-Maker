@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Burger-Maker/static/css/main.ebcab9a3.chunk.css",
-    "main.js": "/Burger-Maker/static/js/main.af540b14.chunk.js",
-    "main.js.map": "/Burger-Maker/static/js/main.af540b14.chunk.js.map",
-    "runtime-main.js": "/Burger-Maker/static/js/runtime-main.d0dbdd12.js",
-    "runtime-main.js.map": "/Burger-Maker/static/js/runtime-main.d0dbdd12.js.map",
-    "static/js/2.6c7dc167.chunk.js": "/Burger-Maker/static/js/2.6c7dc167.chunk.js",
-    "static/js/2.6c7dc167.chunk.js.map": "/Burger-Maker/static/js/2.6c7dc167.chunk.js.map",
-    "static/js/3.36d2f89e.chunk.js": "/Burger-Maker/static/js/3.36d2f89e.chunk.js",
-    "static/js/3.36d2f89e.chunk.js.map": "/Burger-Maker/static/js/3.36d2f89e.chunk.js.map",
-    "static/js/4.983e5358.chunk.js": "/Burger-Maker/static/js/4.983e5358.chunk.js",
-    "static/js/4.983e5358.chunk.js.map": "/Burger-Maker/static/js/4.983e5358.chunk.js.map",
+    "main.js": "/Burger-Maker/static/js/main.57f50a03.chunk.js",
+    "main.js.map": "/Burger-Maker/static/js/main.57f50a03.chunk.js.map",
+    "runtime-main.js": "/Burger-Maker/static/js/runtime-main.328154fd.js",
+    "runtime-main.js.map": "/Burger-Maker/static/js/runtime-main.328154fd.js.map",
+    "static/js/2.25a435be.chunk.js": "/Burger-Maker/static/js/2.25a435be.chunk.js",
+    "static/js/2.25a435be.chunk.js.map": "/Burger-Maker/static/js/2.25a435be.chunk.js.map",
+    "static/js/3.238ea3ab.chunk.js": "/Burger-Maker/static/js/3.238ea3ab.chunk.js",
+    "static/js/3.238ea3ab.chunk.js.map": "/Burger-Maker/static/js/3.238ea3ab.chunk.js.map",
+    "static/js/4.90efc7db.chunk.js": "/Burger-Maker/static/js/4.90efc7db.chunk.js",
+    "static/js/4.90efc7db.chunk.js.map": "/Burger-Maker/static/js/4.90efc7db.chunk.js.map",
     "index.html": "/Burger-Maker/index.html",
-    "precache-manifest.4c78a74feb8d95041099d20fadac7e12.js": "/Burger-Maker/precache-manifest.4c78a74feb8d95041099d20fadac7e12.js",
+    "precache-manifest.e3bf2fbeef218df45730074ef6e6c844.js": "/Burger-Maker/precache-manifest.e3bf2fbeef218df45730074ef6e6c844.js",
     "service-worker.js": "/Burger-Maker/service-worker.js",
     "static/css/main.ebcab9a3.chunk.css.map": "/Burger-Maker/static/css/main.ebcab9a3.chunk.css.map",
-    "static/js/2.6c7dc167.chunk.js.LICENSE.txt": "/Burger-Maker/static/js/2.6c7dc167.chunk.js.LICENSE.txt",
-    "static/js/3.36d2f89e.chunk.js.LICENSE.txt": "/Burger-Maker/static/js/3.36d2f89e.chunk.js.LICENSE.txt",
+    "static/js/2.25a435be.chunk.js.LICENSE.txt": "/Burger-Maker/static/js/2.25a435be.chunk.js.LICENSE.txt",
+    "static/js/3.238ea3ab.chunk.js.LICENSE.txt": "/Burger-Maker/static/js/3.238ea3ab.chunk.js.LICENSE.txt",
     "static/media/beef.svg": "/Burger-Maker/static/media/beef.6e9965f3.svg",
     "static/media/breadBottom.svg": "/Burger-Maker/static/media/breadBottom.f309a78b.svg",
     "static/media/breadTop.svg": "/Burger-Maker/static/media/breadTop.d4dc657a.svg",
@@ -36,9 +36,9 @@
     "static/media/wooden-bgc.png": "/Burger-Maker/static/media/wooden-bgc.623bd546.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d0dbdd12.js",
-    "static/js/2.6c7dc167.chunk.js",
+    "static/js/runtime-main.328154fd.js",
+    "static/js/2.25a435be.chunk.js",
     "static/css/main.ebcab9a3.chunk.css",
-    "static/js/main.af540b14.chunk.js"
+    "static/js/main.57f50a03.chunk.js"
   ]
 }
